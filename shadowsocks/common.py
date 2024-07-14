@@ -253,7 +253,7 @@ class IPNetwork(object):
             raise Exception("Not a valid CIDR notation: %s" % addr)
         if len(block) == 1:
             prefix_size = 0
-            while (ip & 1) == 0 and ip == not 0:
+            while (ip & 1) == 0 and ip != 0:
                 ip >>= 1
                 prefix_size += 1
             logging.warn("You did't specify CIDR routing prefix size for %s, "
